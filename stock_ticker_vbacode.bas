@@ -7,13 +7,13 @@ Sub stockTicker()
     Dim summaryRow As Integer
     Dim openPrice As Double
     Dim closingPrice As Double
-    Dim runningSum As Long
+    Dim runningSum As LongLong
     Dim firstDay As Boolean
     Dim tickerCount As Integer
     Dim lastRow As Long
     Dim greatestIncrease As Double
     Dim greatestDecrease As Double
-    Dim greatestVolume As Long
+    Dim greatestVolume As LongLong
     
     
     ' Declare column constants
@@ -72,7 +72,7 @@ Sub stockTicker()
         i = 2
     
        ' Begin vertical loop
-       For i = 2 To lastRow + 1 'Plus one because we need one last loop to display last row
+     For i = 2 To lastRow + 1 'Plus one because we need one last loop to display last row
     
           ' Display values when loop moves to next ticker value and move to new ticker
           If ws.Cells(i, COL_A).Value <> currentTicker Then
@@ -110,14 +110,14 @@ Sub stockTicker()
                End If
                
                'Display running sum
-               ws.Cells(summaryRow, COL_L).Value = CStr(runningSum) + "00" ' Overflow error on running sum, so added back 00 on the end
+               ws.Cells(summaryRow, COL_L).Value = CStr(runningSum)
                
                'Check for largest sum and display if true
                If runningSum > greatestVolume Then
-                   greatestVolume = ws.Cells(summaryRow, COL_L).Value / 100
+                   greatestVolume = ws.Cells(summaryRow, COL_L).Value
                    
                    ws.Range("O4").Value = currentTicker
-                   ws.Range("P4").Value = CStr(greatestVolume) + "00"
+                   ws.Range("P4").Value = CStr(greatestVolume)
                End If
                
                'Set new summary table row
@@ -148,12 +148,11 @@ Sub stockTicker()
                    closingPrice = ws.Cells(i, COL_F).Value
                
                 End If
-               
+             End If
                'Add to running sum
-               runningSum = runningSum + ws.Cells(i, COL_G).Value / 100 ' Due to overflow error, will add back in display
-           End If
+               runningSum = runningSum + ws.Cells(i, COL_G).Value
            
-       Next i
+        Next i
         
         'Autofit columns for nice display
         ws.Columns("A:P").AutoFit
@@ -161,4 +160,5 @@ Sub stockTicker()
     Next ws
     
 End Sub
+
 
