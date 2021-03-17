@@ -1,6 +1,6 @@
 # hw2-stock-tickers-vba
 
-## Project Instructions
+## Project Instructions | Grade: A+
 
 * Create a script that will loop through all the stocks for one year and output the following information:
   * The ticker symbol.
