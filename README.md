@@ -1,7 +1,9 @@
-# hw2-stock-tickers-vba
+# VBA Stock Ticker Summary
 
-#### GRADE: A+
+### Summary | GRADE: A+
+In this project, I was given a set of daily stock data including the ticker, opening and closing values. I used a VBA script to loop through the starter file and generate a topline summary
 
+### Solution Writeup
 (See the code contained in stock_ticker_vbacode.bas)
 
 The first step in this project was declaring the necessary variables and variable types, and also assigning contant values for each column for easy access.
