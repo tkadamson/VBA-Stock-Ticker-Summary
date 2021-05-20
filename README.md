@@ -1,7 +1,9 @@
 # VBA Stock Ticker Summary
 
 ### Summary | GRADE: A+
-In this project, I was given a set of daily stock data including the ticker, opening and closing values. I used a VBA script to loop through the starter file and generate a topline summary
+In this project, I was given a set of daily stock data including the ticker, opening and closing values. I used a VBA script to loop through the starter file and generate a topline summary, as shown below.
+
+![Summary](images/Summary_Screenshot.png)
 
 ### Solution Writeup
 (See the code contained in stock_ticker_vbacode.bas)
